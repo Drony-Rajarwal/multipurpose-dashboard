@@ -38,18 +38,40 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 h1 {
   margin-bottom: 20px;
-  font-size: 2.5em;
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffdd00, #fbb034, #ff4e50, #e42c64, #9b36b7);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   letter-spacing: 2px;
+  animation: gradientText 3s ease infinite;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .tiles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
 .tile {
@@ -106,3 +128,83 @@ h1 {
 }
 
 /* Designing */
+.tile:nth-child(6) i {
+  color: #1877F2;
+}
+
+/* Facebook */
+.tile:nth-child(7) i {
+  color: #E1306C;
+}
+
+/* Instagram */
+.tile:nth-child(8) i {
+  color: #1DA1F2;
+}
+
+/* Twitter */
+.tile:nth-child(9) i {
+  color: #0077B5;
+}
+
+/* LinkedIn */
+.tile:nth-child(10) i {
+  color: #333;
+}
+
+/* GitHub */
+.tile:nth-child(11) i {
+  color: #9146FF;
+}
+
+/* Twitch */
+.tile:nth-child(12) i {
+  color: #E60023;
+}
+
+/* Pinterest */
+.tile:nth-child(13) i {
+  color: #FF4500;
+}
+
+/* Reddit Programming */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .tile i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .tile i {
+    font-size: 1.5rem;
+  }
+}
